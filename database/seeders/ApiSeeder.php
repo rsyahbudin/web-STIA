@@ -1,0 +1,223 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\ActivePharmaceuticalIngredient;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+
+class ApiSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        $apis = [
+            [
+                'name' => 'Paracetamol',
+                'description' => 'Bahan aktif farmasi untuk produksi obat penghilang rasa sakit dan penurun demam',
+                'manufacturer' => 'Pharma Chemicals Ltd.',
+                'country' => 'India',
+                'packaging' => 'Drum Fiber',
+                'packing_size' => '25 kg',
+                'price' => 1500000,
+                'image_url' => 'https://example.com/paracetamol.jpg',
+            ],
+            [
+                'name' => 'Amoxicillin',
+                'description' => 'Bahan aktif antibiotik untuk produksi obat antibakteri',
+                'manufacturer' => 'BioPharm Inc.',
+                'country' => 'China',
+                'packaging' => 'Karton',
+                'packing_size' => '10 kg',
+                'price' => 2800000,
+                'image_url' => 'https://example.com/amoxicillin.jpg',
+            ],
+            [
+                'name' => 'Omeprazole',
+                'description' => 'Bahan aktif untuk produksi obat penghambat pompa proton untuk mengatasi masalah lambung',
+                'manufacturer' => 'Global Pharma Co.',
+                'country' => 'Germany',
+                'packaging' => 'Aluminium Bag',
+                'packing_size' => '5 kg',
+                'price' => 3200000,
+                'image_url' => 'https://example.com/omeprazole.jpg',
+            ],
+            [
+                'name' => 'Ibuprofen',
+                'description' => 'Bahan aktif anti-inflamasi non-steroid untuk produksi obat pereda nyeri',
+                'manufacturer' => 'MediChem Industries',
+                'country' => 'India',
+                'packaging' => 'Drum Fiber',
+                'packing_size' => '25 kg',
+                'price' => 1800000,
+                'image_url' => 'https://example.com/ibuprofen.jpg',
+            ],
+            [
+                'name' => 'Aspirin',
+                'description' => 'Bahan aktif untuk produksi obat antiplatelet dan analgesik',
+                'manufacturer' => 'Aspirin Corp.',
+                'country' => 'Germany',
+                'packaging' => 'Karton',
+                'packing_size' => '20 kg',
+                'price' => 1200000,
+                'image_url' => 'https://example.com/aspirin.jpg',
+            ],
+            [
+                'name' => 'Metformin HCl',
+                'description' => 'Bahan aktif untuk produksi obat diabetes tipe 2',
+                'manufacturer' => 'Diabetes Pharma Ltd.',
+                'country' => 'India',
+                'packaging' => 'Drum Fiber',
+                'packing_size' => '25 kg',
+                'price' => 2200000,
+                'image_url' => 'https://example.com/metformin.jpg',
+            ],
+            [
+                'name' => 'Atorvastatin',
+                'description' => 'Bahan aktif untuk produksi obat penurun kolesterol',
+                'manufacturer' => 'Cardio Pharmaceuticals',
+                'country' => 'Ireland',
+                'packaging' => 'Aluminium Bag',
+                'packing_size' => '5 kg',
+                'price' => 4500000,
+                'image_url' => 'https://example.com/atorvastatin.jpg',
+            ],
+            [
+                'name' => 'Losartan Potassium',
+                'description' => 'Bahan aktif untuk produksi obat hipertensi',
+                'manufacturer' => 'Hypertension Labs',
+                'country' => 'USA',
+                'packaging' => 'Karton',
+                'packing_size' => '10 kg',
+                'price' => 3800000,
+                'image_url' => 'https://example.com/losartan.jpg',
+            ],
+            [
+                'name' => 'Cetirizine HCl',
+                'description' => 'Bahan aktif antihistamin untuk produksi obat alergi',
+                'manufacturer' => 'Allergy Solutions Inc.',
+                'country' => 'Belgium',
+                'packaging' => 'Karton',
+                'packing_size' => '10 kg',
+                'price' => 2600000,
+                'image_url' => 'https://example.com/cetirizine.jpg',
+            ],
+            [
+                'name' => 'Simvastatin',
+                'description' => 'Bahan aktif statin untuk produksi obat penurun kolesterol',
+                'manufacturer' => 'Statin Pharmaceuticals',
+                'country' => 'India',
+                'packaging' => 'Aluminium Bag',
+                'packing_size' => '5 kg',
+                'price' => 3500000,
+                'image_url' => 'https://example.com/simvastatin.jpg',
+            ],
+            [
+                'name' => 'Amlodipine Besylate',
+                'description' => 'Bahan aktif calcium channel blocker untuk obat hipertensi',
+                'manufacturer' => 'Cardio Care Ltd.',
+                'country' => 'China',
+                'packaging' => 'Karton',
+                'packing_size' => '10 kg',
+                'price' => 2900000,
+                'image_url' => 'https://example.com/amlodipine.jpg',
+            ],
+            [
+                'name' => 'Ciprofloxacin HCl',
+                'description' => 'Bahan aktif antibiotik fluoroquinolone untuk infeksi bakteri',
+                'manufacturer' => 'Antibiotic Industries',
+                'country' => 'India',
+                'packaging' => 'Drum Fiber',
+                'packing_size' => '25 kg',
+                'price' => 3200000,
+                'image_url' => 'https://example.com/ciprofloxacin.jpg',
+            ],
+            [
+                'name' => 'Ranitidine HCl',
+                'description' => 'Bahan aktif H2 receptor antagonist untuk masalah lambung',
+                'manufacturer' => 'Gastro Pharmaceuticals',
+                'country' => 'Italy',
+                'packaging' => 'Karton',
+                'packing_size' => '20 kg',
+                'price' => 2400000,
+                'image_url' => 'https://example.com/ranitidine.jpg',
+            ],
+            [
+                'name' => 'Diclofenac Sodium',
+                'description' => 'Bahan aktif NSAID untuk produksi obat anti-inflamasi',
+                'manufacturer' => 'Pain Relief Corp.',
+                'country' => 'Switzerland',
+                'packaging' => 'Aluminium Bag',
+                'packing_size' => '10 kg',
+                'price' => 2100000,
+                'image_url' => 'https://example.com/diclofenac.jpg',
+            ],
+            [
+                'name' => 'Fluconazole',
+                'description' => 'Bahan aktif antifungal untuk produksi obat infeksi jamur',
+                'manufacturer' => 'Antifungal Solutions',
+                'country' => 'France',
+                'packaging' => 'Karton',
+                'packing_size' => '5 kg',
+                'price' => 4200000,
+                'image_url' => 'https://example.com/fluconazole.jpg',
+            ],
+            [
+                'name' => 'Prednisolone',
+                'description' => 'Bahan aktif kortikosteroid untuk produksi obat anti-inflamasi',
+                'manufacturer' => 'Steroid Pharmaceuticals',
+                'country' => 'UK',
+                'packaging' => 'Aluminium Bag',
+                'packing_size' => '5 kg',
+                'price' => 3800000,
+                'image_url' => 'https://example.com/prednisolone.jpg',
+            ],
+            [
+                'name' => 'Montelukast Sodium',
+                'description' => 'Bahan aktif leukotriene receptor antagonist untuk asma',
+                'manufacturer' => 'Respiratory Labs',
+                'country' => 'Israel',
+                'packaging' => 'Karton',
+                'packing_size' => '5 kg',
+                'price' => 5200000,
+                'image_url' => 'https://example.com/montelukast.jpg',
+            ],
+            [
+                'name' => 'Pantoprazole Sodium',
+                'description' => 'Bahan aktif proton pump inhibitor untuk masalah lambung',
+                'manufacturer' => 'Gastric Solutions Inc.',
+                'country' => 'Japan',
+                'packaging' => 'Aluminium Bag',
+                'packing_size' => '5 kg',
+                'price' => 3600000,
+                'image_url' => 'https://example.com/pantoprazole.jpg',
+            ],
+            [
+                'name' => 'Azithromycin',
+                'description' => 'Bahan aktif antibiotik makrolida untuk infeksi bakteri',
+                'manufacturer' => 'Macrolide Pharmaceuticals',
+                'country' => 'Croatia',
+                'packaging' => 'Karton',
+                'packing_size' => '10 kg',
+                'price' => 4800000,
+                'image_url' => 'https://example.com/azithromycin.jpg',
+            ],
+            [
+                'name' => 'Levothyroxine Sodium',
+                'description' => 'Bahan aktif hormon tiroid untuk pengobatan hipotiroidisme',
+                'manufacturer' => 'Thyroid Therapeutics',
+                'country' => 'Denmark',
+                'packaging' => 'Aluminium Bag',
+                'packing_size' => '1 kg',
+                'price' => 6500000,
+                'image_url' => 'https://example.com/levothyroxine.jpg',
+            ],
+        ];
+
+        foreach ($apis as $api) {
+            ActivePharmaceuticalIngredient::create($api);
+        }
+    }
+}

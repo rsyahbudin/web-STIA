@@ -1,0 +1,223 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\FoodProduct;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+
+class FoodProductSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        $products = [
+            [
+                'name' => 'Tepung Terigu Premium',
+                'description' => 'Tepung terigu berkualitas tinggi untuk berbagai kebutuhan baking dan masakan',
+                'manufacturer' => 'PT Food Solutions',
+                'country' => 'Indonesia',
+                'packaging' => 'Kantong Kertas',
+                'packing_size' => '25 kg',
+                'price' => 250000,
+                'image_url' => 'https://example.com/terigu.jpg',
+            ],
+            [
+                'name' => 'Gula Kristal Putih',
+                'description' => 'Gula kristal putih murni untuk kebutuhan industri makanan dan minuman',
+                'manufacturer' => 'Sugar Industries Co.',
+                'country' => 'Thailand',
+                'packaging' => 'Karung',
+                'packing_size' => '50 kg',
+                'price' => 520000,
+                'image_url' => 'https://example.com/gula.jpg',
+            ],
+            [
+                'name' => 'Minyak Kelapa Sawit',
+                'description' => 'Minyak kelapa sawit berkualitas untuk industri makanan',
+                'manufacturer' => 'PT Palm Oil Indonesia',
+                'country' => 'Indonesia',
+                'packaging' => 'Jerigen',
+                'packing_size' => '20 L',
+                'price' => 320000,
+                'image_url' => 'https://example.com/minyak.jpg',
+            ],
+            [
+                'name' => 'Garam Dapur Halus',
+                'description' => 'Garam dapur berkualitas tinggi untuk industri makanan dan minuman',
+                'manufacturer' => 'PT Garam Nusantara',
+                'country' => 'Indonesia',
+                'packaging' => 'Karung',
+                'packing_size' => '25 kg',
+                'price' => 180000,
+                'image_url' => 'https://example.com/garam.jpg',
+            ],
+            [
+                'name' => 'Beras Premium',
+                'description' => 'Beras berkualitas premium untuk kebutuhan industri makanan',
+                'manufacturer' => 'CV Beras Sejahtera',
+                'country' => 'Indonesia',
+                'packaging' => 'Karung',
+                'packing_size' => '50 kg',
+                'price' => 750000,
+                'image_url' => 'https://example.com/beras.jpg',
+            ],
+            [
+                'name' => 'Kacang Kedelai',
+                'description' => 'Kacang kedelai pilihan untuk produksi tahu, tempe, dan produk olahan lainnya',
+                'manufacturer' => 'PT Agro Mandiri',
+                'country' => 'Indonesia',
+                'packaging' => 'Karung',
+                'packing_size' => '40 kg',
+                'price' => 680000,
+                'image_url' => 'https://example.com/kedelai.jpg',
+            ],
+            [
+                'name' => 'Jagung Pipilan',
+                'description' => 'Jagung pipilan kering untuk pakan ternak dan industri makanan',
+                'manufacturer' => 'PT Jagung Makmur',
+                'country' => 'Indonesia',
+                'packaging' => 'Karung',
+                'packing_size' => '50 kg',
+                'price' => 420000,
+                'image_url' => 'https://example.com/jagung.jpg',
+            ],
+            [
+                'name' => 'Kacang Tanah',
+                'description' => 'Kacang tanah berkualitas untuk industri makanan ringan dan selai',
+                'manufacturer' => 'CV Kacang Nusantara',
+                'country' => 'Indonesia',
+                'packaging' => 'Karung',
+                'packing_size' => '30 kg',
+                'price' => 540000,
+                'image_url' => 'https://example.com/kacang-tanah.jpg',
+            ],
+            [
+                'name' => 'Cokelat Bubuk',
+                'description' => 'Cokelat bubuk premium untuk industri makanan dan minuman',
+                'manufacturer' => 'Cocoa Industries Ltd.',
+                'country' => 'Malaysia',
+                'packaging' => 'Karton',
+                'packing_size' => '20 kg',
+                'price' => 850000,
+                'image_url' => 'https://example.com/cokelat.jpg',
+            ],
+            [
+                'name' => 'Susu Bubuk Full Cream',
+                'description' => 'Susu bubuk full cream untuk industri makanan dan minuman',
+                'manufacturer' => 'Dairy Products Co.',
+                'country' => 'New Zealand',
+                'packaging' => 'Karton',
+                'packing_size' => '25 kg',
+                'price' => 1200000,
+                'image_url' => 'https://example.com/susu.jpg',
+            ],
+            [
+                'name' => 'Vanili Ekstrak',
+                'description' => 'Ekstrak vanili murni untuk industri makanan dan kue',
+                'manufacturer' => 'Vanilla Essence Inc.',
+                'country' => 'Madagascar',
+                'packaging' => 'Botol Kaca',
+                'packing_size' => '5 L',
+                'price' => 2500000,
+                'image_url' => 'https://example.com/vanili.jpg',
+            ],
+            [
+                'name' => 'Ragi Instant',
+                'description' => 'Ragi instant untuk industri roti dan kue',
+                'manufacturer' => 'Yeast Technologies',
+                'country' => 'France',
+                'packaging' => 'Karton',
+                'packing_size' => '10 kg',
+                'price' => 450000,
+                'image_url' => 'https://example.com/ragi.jpg',
+            ],
+            [
+                'name' => 'Mentega Tawar',
+                'description' => 'Mentega tawar berkualitas tinggi untuk industri bakery',
+                'manufacturer' => 'Butter Industries',
+                'country' => 'Denmark',
+                'packaging' => 'Karton',
+                'packing_size' => '20 kg',
+                'price' => 980000,
+                'image_url' => 'https://example.com/mentega.jpg',
+            ],
+            [
+                'name' => 'Telur Ayam Segar',
+                'description' => 'Telur ayam segar untuk kebutuhan industri makanan',
+                'manufacturer' => 'PT Peternakan Maju',
+                'country' => 'Indonesia',
+                'packaging' => 'Tray Karton',
+                'packing_size' => '360 butir',
+                'price' => 650000,
+                'image_url' => 'https://example.com/telur.jpg',
+            ],
+            [
+                'name' => 'Keju Cheddar',
+                'description' => 'Keju cheddar berkualitas untuk industri makanan',
+                'manufacturer' => 'Cheese Factory Ltd.',
+                'country' => 'Australia',
+                'packaging' => 'Vacuum Pack',
+                'packing_size' => '10 kg',
+                'price' => 1500000,
+                'image_url' => 'https://example.com/keju.jpg',
+            ],
+            [
+                'name' => 'Daging Sapi Beku',
+                'description' => 'Daging sapi beku berkualitas untuk industri makanan',
+                'manufacturer' => 'Beef Industries',
+                'country' => 'Argentina',
+                'packaging' => 'Vacuum Pack',
+                'packing_size' => '20 kg',
+                'price' => 2800000,
+                'image_url' => 'https://example.com/daging-sapi.jpg',
+            ],
+            [
+                'name' => 'Daging Ayam Fillet',
+                'description' => 'Daging ayam fillet beku untuk industri makanan olahan',
+                'manufacturer' => 'PT Unggas Sejahtera',
+                'country' => 'Indonesia',
+                'packaging' => 'Vacuum Pack',
+                'packing_size' => '15 kg',
+                'price' => 1200000,
+                'image_url' => 'https://example.com/ayam-fillet.jpg',
+            ],
+            [
+                'name' => 'Ikan Tuna Beku',
+                'description' => 'Ikan tuna beku berkualitas ekspor untuk industri makanan',
+                'manufacturer' => 'Ocean Harvest Co.',
+                'country' => 'Indonesia',
+                'packaging' => 'Styrofoam Box',
+                'packing_size' => '25 kg',
+                'price' => 1800000,
+                'image_url' => 'https://example.com/tuna.jpg',
+            ],
+            [
+                'name' => 'Udang Beku',
+                'description' => 'Udang beku berkualitas ekspor untuk industri makanan',
+                'manufacturer' => 'Shrimp Export Ltd.',
+                'country' => 'Indonesia',
+                'packaging' => 'Styrofoam Box',
+                'packing_size' => '10 kg',
+                'price' => 2200000,
+                'image_url' => 'https://example.com/udang.jpg',
+            ],
+            [
+                'name' => 'Bumbu Masak Instan',
+                'description' => 'Bumbu masak instan untuk industri makanan siap saji',
+                'manufacturer' => 'PT Bumbu Nusantara',
+                'country' => 'Indonesia',
+                'packaging' => 'Karton',
+                'packing_size' => '5 kg',
+                'price' => 320000,
+                'image_url' => 'https://example.com/bumbu.jpg',
+            ],
+        ];
+
+        foreach ($products as $product) {
+            FoodProduct::create($product);
+        }
+    }
+}
