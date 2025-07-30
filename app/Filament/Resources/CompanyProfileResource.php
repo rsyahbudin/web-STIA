@@ -17,74 +17,43 @@ class CompanyProfileResource extends Resource
 {
     protected static ?string $model = CompanyProfile::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-building-office';
-    
-    protected static ?string $navigationLabel = 'Profil Perusahaan';
-    
-    protected static ?string $navigationGroup = 'Pengaturan';
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\Section::make('Informasi Perusahaan')
-                    ->schema([
-                        Forms\Components\TextInput::make('company_name')
-                            ->required()
-                            ->maxLength(255)
-                            ->label('Nama Perusahaan'),
-                        Forms\Components\Textarea::make('company_description')
-                            ->required()
-                            ->maxLength(65535)
-                            ->label('Deskripsi Perusahaan')
-                            ->rows(3),
-                        Forms\Components\Textarea::make('vision')
-                            ->maxLength(65535)
-                            ->label('Visi')
-                            ->rows(2),
-                        Forms\Components\Textarea::make('mission')
-                            ->maxLength(65535)
-                            ->label('Misi')
-                            ->rows(3),
-                    ])->columns(2),
-                    
-                Forms\Components\Section::make('Kontak')
-                    ->schema([
-                        Forms\Components\Textarea::make('address')
-                            ->required()
-                            ->maxLength(255)
-                            ->label('Alamat')
-                            ->rows(2),
-                        Forms\Components\TextInput::make('phone')
-                            ->required()
-                            ->maxLength(255)
-                            ->label('Telepon'),
-                        Forms\Components\TextInput::make('email')
-                            ->required()
-                            ->email()
-                            ->maxLength(255)
-                            ->label('Email'),
-                        Forms\Components\TextInput::make('website')
-                            ->maxLength(255)
-                            ->label('Website'),
-                    ])->columns(2),
-                    
-                Forms\Components\Section::make('Hero Section')
-                    ->schema([
-                        Forms\Components\TextInput::make('hero_title')
-                            ->required()
-                            ->maxLength(255)
-                            ->label('Judul Hero'),
-                        Forms\Components\Textarea::make('hero_subtitle')
-                            ->required()
-                            ->maxLength(65535)
-                            ->label('Subjudul Hero')
-                            ->rows(2),
-                        Forms\Components\FileUpload::make('logo_url')
-                            ->image()
-                            ->directory('company')
-                            ->label('Logo Perusahaan'),
-                    ])->columns(1),
+                Forms\Components\TextInput::make('company_name')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\Textarea::make('company_description')
+                    ->required()
+                    ->columnSpanFull(),
+                Forms\Components\Textarea::make('vision')
+                    ->columnSpanFull(),
+                Forms\Components\Textarea::make('mission')
+                    ->columnSpanFull(),
+                Forms\Components\TextInput::make('address')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('phone')
+                    ->tel()
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('email')
+                    ->email()
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('fax')
+                    ->maxLength(255),
+                Forms\Components\Textarea::make('hero_title')
+                    ->required()
+                    ->columnSpanFull(),
+                Forms\Components\Textarea::make('hero_subtitle')
+                    ->required()
+                    ->columnSpanFull(),
+                Forms\Components\TextInput::make('logo_url')
+                    ->maxLength(255),
             ]);
     }
 
@@ -93,19 +62,25 @@ class CompanyProfileResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('company_name')
-                    ->searchable()
-                    ->sortable()
-                    ->label('Nama Perusahaan'),
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('address')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('phone')
-                    ->searchable()
-                    ->label('Telepon'),
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('email')
-                    ->searchable()
-                    ->label('Email'),
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('fax')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('logo_url')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
-                    ->label('Terakhir Diupdate'),
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //

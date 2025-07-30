@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('address');
             $table->string('phone');
             $table->string('email');
-            $table->string('website')->nullable();
+            $table->string('fax')->nullable();
             $table->text('hero_title');
             $table->text('hero_subtitle');
             $table->string('logo_url')->nullable();

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $api->name }} - PT Gepi Pharma</title>
+    <title>{{ $api->name }} - PT Setia Tritunggal Inti Artha</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -14,7 +14,7 @@
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
                     <div class="flex-shrink-0">
-                        <a href="/" class="text-2xl font-bold text-red-600">PT Gepi Pharma</a>
+                        <a href="/" class="text-2xl font-bold text-red-600">PT Setia Tritunggal Inti Artha</a>
                     </div>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
@@ -204,9 +204,9 @@
     <footer class="bg-gray-800 text-white py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
-                <h3 class="text-2xl font-bold mb-2">PT Gepi Pharma</h3>
+                <h3 class="text-2xl font-bold mb-2">PT Setia Tritunggal Inti Artha</h3>
                 <p class="text-gray-400 mb-4">Penyedia terpercaya produk makanan dan API berkualitas tinggi</p>
-                <p class="text-gray-500">&copy; 2024 PT Gepi Pharma. All rights reserved.</p>
+                <p class="text-gray-500">&copy; 2024 PT Setia Tritunggal Inti Artha. All rights reserved.</p>
             </div>
         </div>
     </footer>

@@ -47,10 +47,6 @@ class FoodProductResource extends Resource
                     ->required()
                     ->maxLength(50)
                     ->label('Ukuran Kemasan'),
-                Forms\Components\TextInput::make('price')
-                    ->numeric()
-                    ->prefix('Rp')
-                    ->label('Harga'),
                 Forms\Components\FileUpload::make('image_url')
                     ->image()
                     ->directory('food-products')
@@ -77,10 +73,6 @@ class FoodProductResource extends Resource
                     ->label('Kemasan'),
                 Tables\Columns\TextColumn::make('packing_size')
                     ->label('Ukuran Kemasan'),
-                Tables\Columns\TextColumn::make('price')
-                    ->money('idr')
-                    ->sortable()
-                    ->label('Harga'),
                 Tables\Columns\ImageColumn::make('image_url')
                     ->label('Gambar'),
             ])

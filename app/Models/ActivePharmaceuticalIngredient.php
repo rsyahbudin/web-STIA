@@ -18,12 +18,7 @@ class ActivePharmaceuticalIngredient extends Model
         'country',
         'packaging',
         'packing_size',
-        'price',
         'image_url',
     ];
 
-    public function getPriceRupiahAttribute()
-    {
-        return 'Rp' . number_format($this->price, 0, ',', '.');
-    }
 }
