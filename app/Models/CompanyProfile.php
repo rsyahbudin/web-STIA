@@ -18,27 +18,39 @@ class CompanyProfile extends Model
         'phone',
         'email',
         'fax',
+        'whatsapp',
         'hero_title',
         'hero_subtitle',
+        'hero_image',
         'logo_url',
     ];
 
+    /**
+     * Get company profile data
+     */
     public static function getCompanyData()
     {
-        return self::first() ?? self::create([
-            [
-                'company_name' => 'PT. Setia Tritunggal Inti Artha',
-                'company_description' => 'We are a trading company in Pharmaceutical and Cosmetic chemicals and raw materials. We focus on developing supply and distribution of raw materials in line with company growth and customer needs.',
-                'vision' => 'Be a leading company in Indonesia which is engaged in trading and distribution of raw material and chemicals with orientation of the pharmaceutical and cosmetics that always provide high quality products, excellent service, competitive prices, strive to be the best partner to achieve customer satisfaction.',
-                'mission' => 'To provide excellent service with a maximum added value to customers by continuous improvements in work systems and procedures, focusing on aspects of quality, service, safety, cost and delivery.',
-                'address' => 'Taman Tekno Bangunan Multi Guna, Blok H2 No. 5, Tangerang 15314, Indonesia',
-                'phone' => '+62 21 7563685 / 7563663 / 7563701',
-                'email' => 'info@setiatritunggal.com', // Sesuaikan jika ada email resmi
-                'fax' => '+62 21 7563713',
-                'hero_title' => 'PT. Setia Tritunggal Inti Artha',
-                'hero_subtitle' => 'Trusted supplier in pharmaceutical, cosmetic chemicals, and raw material distribution in Indonesia',
-            ]
+        $profile = self::first();
 
-        ]);
+        if (!$profile) {
+            // Return default data if no profile exists
+            return (object) [
+                'company_name' => 'PT Food Solutions Indonesia',
+                'company_description' => 'Perusahaan terkemuka dalam distribusi bahan makanan berkualitas tinggi untuk industri makanan dan minuman di Indonesia.',
+                'vision' => 'Menjadi mitra terpercaya dalam penyediaan bahan makanan berkualitas tinggi untuk industri makanan dan minuman di Indonesia.',
+                'mission' => 'Menyediakan bahan makanan berkualitas tinggi dengan layanan terbaik dan harga kompetitif untuk memenuhi kebutuhan industri makanan dan minuman.',
+                'address' => 'Jl. Sudirman No. 123, Jakarta Pusat, DKI Jakarta 12345',
+                'phone' => '+62 21 1234 5678',
+                'email' => 'info@foodsolutions.co.id',
+                'fax' => '+62 21 1234 5679',
+                'whatsapp' => '6281804040684',
+                'hero_title' => 'Solusi Bahan Makanan Berkualitas',
+                'hero_subtitle' => 'Menyediakan bahan makanan berkualitas tinggi untuk industri makanan dan minuman di Indonesia',
+                'hero_image' => null,
+                'logo_url' => null,
+            ];
+        }
+
+        return $profile;
     }
 }

@@ -18,7 +18,5 @@ class ActivePharmaceuticalIngredient extends Model
         'country',
         'packaging',
         'packing_size',
-        'image_url',
     ];
-
 }

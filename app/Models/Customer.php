@@ -5,16 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class FoodProduct extends Model
+class Customer extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'name',
         'description',
-        'manufacturer',
-        'country',
-        'packaging',
-        'packing_size',
+        'logo_url',
+        'website',
+        'industry',
+        'is_featured',
+    ];
+
+    protected $casts = [
+        'is_featured' => 'boolean',
     ];
 }

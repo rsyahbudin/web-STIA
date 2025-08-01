@@ -18,9 +18,7 @@ class FoodProductController extends Controller
         }
 
         $products = $query->get();
-
         $companyProfile = CompanyProfile::getCompanyData();
-
 
         return view('products.index', compact('products', 'companyProfile'));
     }
@@ -28,7 +26,6 @@ class FoodProductController extends Controller
     public function show($id)
     {
         $companyProfile = CompanyProfile::getCompanyData();
-
         $product = FoodProduct::findOrFail($id);
         $relatedProducts = FoodProduct::where('id', '!=', $product->id)
             ->limit(4)

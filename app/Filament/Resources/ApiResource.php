@@ -15,10 +15,10 @@ class ApiResource extends Resource
     protected static ?string $model = ActivePharmaceuticalIngredient::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-beaker';
-    
+
     protected static ?string $navigationLabel = 'Active Pharmaceutical Ingredients';
-    
-    protected static ?string $navigationGroup = 'Katalog Produk';
+
+    protected static ?string $navigationGroup = 'Product Catalog';
 
     public static function form(Form $form): Form
     {
@@ -27,32 +27,28 @@ class ApiResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(100)
-                    ->label('Nama API'),
+                    ->label('API Name'),
                 Forms\Components\Textarea::make('description')
                     ->required()
                     ->maxLength(65535)
                     ->columnSpanFull()
-                    ->label('Deskripsi'),
+                    ->label('Description'),
                 Forms\Components\TextInput::make('manufacturer')
                     ->required()
                     ->maxLength(100)
-                    ->label('Produsen'),
+                    ->label('Manufacturer'),
                 Forms\Components\TextInput::make('country')
                     ->required()
                     ->maxLength(50)
-                    ->label('Negara Asal'),
+                    ->label('Country of Origin'),
                 Forms\Components\TextInput::make('packaging')
                     ->required()
                     ->maxLength(100)
-                    ->label('Kemasan'),
+                    ->label('Packaging'),
                 Forms\Components\TextInput::make('packing_size')
                     ->required()
                     ->maxLength(50)
-                    ->label('Ukuran Kemasan'),
-                Forms\Components\FileUpload::make('image_url')
-                    ->image()
-                    ->directory('api-products')
-                    ->label('Gambar Produk'),
+                    ->label('Package Size'),
             ]);
     }
 
@@ -63,20 +59,18 @@ class ApiResource extends Resource
                 Tables\Columns\TextColumn::make('name')
                     ->searchable()
                     ->sortable()
-                    ->label('Nama API'),
+                    ->label('API Name'),
                 Tables\Columns\TextColumn::make('manufacturer')
                     ->searchable()
                     ->sortable()
-                    ->label('Produsen'),
+                    ->label('Manufacturer'),
                 Tables\Columns\TextColumn::make('country')
                     ->searchable()
-                    ->label('Negara Asal'),
+                    ->label('Country of Origin'),
                 Tables\Columns\TextColumn::make('packaging')
-                    ->label('Kemasan'),
+                    ->label('Packaging'),
                 Tables\Columns\TextColumn::make('packing_size')
-                    ->label('Ukuran Kemasan'),
-                Tables\Columns\ImageColumn::make('image_url')
-                    ->label('Gambar'),
+                    ->label('Package Size'),
             ])
             ->filters([
                 //

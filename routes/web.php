@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ApiController;
+use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\FoodProductController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
@@ -18,14 +19,15 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-// Food Products Routes
+// Combined Catalog Routes
+Route::get('/catalog', [CatalogController::class, 'index'])->name('catalog.index');
+Route::get('/catalog/{type}/{id}', [CatalogController::class, 'show'])->name('catalog.show');
+
+// Legacy Routes (for backward compatibility)
 Route::get('/products', [FoodProductController::class, 'index'])->name('products.index');
 Route::get('/products/{id}', [FoodProductController::class, 'show'])->name('products.show');
-
-// API Routes
 Route::get('/apis', [ApiController::class, 'index'])->name('apis.index');
 Route::get('/apis/{id}', [ApiController::class, 'show'])->name('apis.show');
 
-
-require __DIR__.'/auth.php';
-require __DIR__.'/settings.php';
+require __DIR__ . '/auth.php';
+require __DIR__ . '/settings.php';

@@ -18,9 +18,7 @@ class ApiController extends Controller
         }
 
         $apis = $query->get();
-
         $companyProfile = CompanyProfile::getCompanyData();
-
 
         return view('apis.index', compact('apis', 'companyProfile'));
     }
@@ -28,7 +26,6 @@ class ApiController extends Controller
     public function show($id)
     {
         $companyProfile = CompanyProfile::getCompanyData();
-
         $api = ActivePharmaceuticalIngredient::findOrFail($id);
         $relatedApis = ActivePharmaceuticalIngredient::where('id', '!=', $api->id)
             ->limit(4)

@@ -69,10 +69,14 @@
                     </div>
 
                     <div class="flex justify-between items-center">
-                        <span class="text-lg font-bold text-red-600">{{ $product->price_rupiah }}</span>
                         <a href="{{ route('products.show', $product->id) }}"
                             class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition duration-300 text-sm font-medium">
                             Detail
+                        </a>
+                        <a href="https://wa.me/{{ $companyProfile->whatsapp }}?text=Halo, saya tertarik dengan produk {{ $product->name }}. Mohon informasi lebih lanjut."
+                            target="_blank"
+                            class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition duration-300 text-sm font-medium">
+                            <i class="fab fa-whatsapp mr-1"></i> Tanya
                         </a>
                     </div>
                 </div>
@@ -97,9 +101,16 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-3xl font-bold mb-4">Butuh Bantuan Memilih Produk?</h2>
         <p class="text-xl mb-8">Tim ahli kami siap membantu Anda menemukan produk yang tepat untuk kebutuhan bisnis Anda</p>
-        <a href="/#contact" class="bg-white text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">
-            Hubungi Kami
-        </a>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/#contact" class="bg-white text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">
+                Hubungi Kami
+            </a>
+            <a href="https://wa.me/{{ $companyProfile->whatsapp }}?text=Halo, saya ingin berkonsultasi tentang produk yang tepat untuk kebutuhan bisnis saya."
+                target="_blank"
+                class="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition duration-300">
+                <i class="fab fa-whatsapp mr-2"></i>Chat WhatsApp
+            </a>
+        </div>
     </div>
 </section>
 @endsection

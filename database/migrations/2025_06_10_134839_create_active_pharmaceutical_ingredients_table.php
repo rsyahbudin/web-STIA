@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('country', 50);
             $table->string('packaging', 100);
             $table->string('packing_size', 50);
-            $table->decimal('price', 10, 2)->nullable();
             $table->string('image_url')->nullable();
             $table->timestamps();
         });
