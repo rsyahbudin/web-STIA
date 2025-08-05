@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
             ['email' => 'admin@example.com'],
             [
                 'name' => 'Admin',
-                'password' => Hash::make('password'),
+                'password' => Hash::make('stiaAdmin'),
             ]
         );
 
@@ -35,7 +35,7 @@ class DatabaseSeeder extends Seeder
                 'phone' => '(+62-21) 756 3685 / 756 3663 / 756 3701',
                 'email' => 'info@setia-tritunggal.com',
                 'fax' => '(+62-21) 756 3713',
-                'whatsapp' => '6281804040684',
+                'whatsapp' => '6288212716081',
                 'hero_title' => 'Empowering Industries with Quality Raw Materials',
                 'hero_subtitle' => 'Trusted since 2000 in pharmaceutical and cosmetic chemical supply across Indonesia.',
             ]
